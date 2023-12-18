@@ -7,15 +7,14 @@ llm = CTransformers(
     model_type = "llama"
 )
 
-st.title('인공지능 시인')
+st.title('AI Poet')
 
-content = st.text_input('시의 주제를 제시해주세요.')
+content = st.text_input('What is topic?')
 
-if st.button('시 작성 요청하기'):
-    with st.spinner('시 작성 중...'):
+if st.button('Request a poem'):
+    with st.spinner('Writing...'):
         result = llm.predict("write a poem about" + content + ": ")
         st.write(result)
-
 
 
 
